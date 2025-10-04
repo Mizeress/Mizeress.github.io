@@ -5,6 +5,12 @@
   --muted-color: #9aa6b2;
   --accent: #4ea8ff;
   --link: #8ecbff;
+
+  /* subtle layering colors for surfaces and borders */
+  --surface-overlay: rgba(255,255,255,0.02); /* faint lightening for panes */
+  --surface-overlay-2: rgba(255,255,255,0.04);
+  --edge-sep: rgba(255,255,255,0.03);        /* very faint border */
+  --accent-glow: rgba(78,168,255,0.06);
 }
 
 :root.light {
@@ -148,14 +154,6 @@ nav.site-nav a:hover { text-decoration: underline; color: var(--accent); }
   .pane { padding: .9rem; }
 }
 
-/* ---------- subtle page illumination ---------- */
-:root {
-  --surface-overlay: rgba(255,255,255,0.02); /* faint lightening for panes */
-  --surface-overlay-2: rgba(255,255,255,0.04);
-  --edge-sep: rgba(255,255,255,0.03);        /* very faint border */
-  --accent-glow: rgba(78,168,255,0.06);
-}
-
 /* gentle background variation behind main content */
 body {
   background: radial-gradient(circle at 12% 18%, rgba(78,168,255,0.015), transparent 10%),
@@ -253,7 +251,7 @@ a:hover, .site-nav .nav-link:hover {
   .col-md-4.text-center.text-md-start { padding-left: 1rem; padding-right: 1rem; }
 }
 
-/* If the image still appears flush, add a small left offset only on wide screens */
+/* add a small left offset for images only on wide screens */
 @media (min-width: 1200px) {
   .profile-img { margin-left: 0.25rem; }
 }
@@ -270,7 +268,7 @@ a:hover, .site-nav .nav-link:hover {
   .profile-img { margin-bottom: 1.5rem; }
 }
 
-/* larger screens: more breathing room if you want it */
+/* larger screens: more breathing room */
 @media (min-width: 992px) {
   .profile-img { margin-bottom: 2rem; }
 }
