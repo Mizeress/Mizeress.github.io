@@ -16,6 +16,7 @@
   --link: #0d6efd;
 }
 
+
 html, body {
   background: var(--bg);
   color: var(--text);
@@ -110,4 +111,166 @@ nav.site-nav a:hover { text-decoration: underline; color: var(--accent); }
 /* optional: slight negative margin to visually nudge it left on wide screens */
 @media (min-width: 992px) {
   .profile-img { margin-left: -2rem; }
+}
+
+/* content wrapper — keeps the page centered and away from edges */
+.content-wrap {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+
+/* slightly larger side padding on wide screens */
+@media (min-width: 992px) {
+  .content-wrap { padding-left: 2rem; padding-right: 2rem; }
+}
+
+/* pane/card spacing so sections don't butt up against edges */
+.pane {
+  padding: 1.25rem;
+  border-radius: 10px;
+  background: transparent; /* keep underlying theme but give inner breathing room */
+}
+
+/* optionally visually separate primary panes with a faint surface */
+.pane.surface {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card) 96%, var(--surface-elev-1) 4%), var(--card));
+  border: 1px solid var(--surface-elev-1);
+}
+
+/* consistent vertical rhythm between panes */
+.section-gap { margin-top: 1.5rem; margin-bottom: 1.5rem; }
+
+/* small screens: slightly reduced padding to preserve space */
+@media (max-width: 576px) {
+  .pane { padding: .9rem; }
+}
+
+/* ---------- subtle page illumination ---------- */
+:root {
+  --surface-overlay: rgba(255,255,255,0.02); /* faint lightening for panes */
+  --surface-overlay-2: rgba(255,255,255,0.04);
+  --edge-sep: rgba(255,255,255,0.03);        /* very faint border */
+  --accent-glow: rgba(78,168,255,0.06);
+}
+
+/* gentle background variation behind main content */
+body {
+  background: radial-gradient(circle at 12% 18%, rgba(78,168,255,0.015), transparent 10%),
+              radial-gradient(circle at 92% 82%, rgba(13,110,253,0.01), transparent 14%),
+              var(--bg);
+}
+
+/* give content-wrap a soft lifted surface */
+.content-wrap {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card) 96%, var(--surface-overlay) 4%), var(--card));
+  border-radius: 12px;
+  border: 1px solid var(--edge-sep);
+  box-shadow: 0 12px 40px rgba(2,6,23,0.45);
+  overflow: hidden;
+}
+
+/* make panes slightly brighter than the page card to separate blocks */
+.pane.surface {
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card) 94%, var(--surface-overlay-2) 6%), var(--card));
+  border: 1px solid rgba(255,255,255,0.02);
+  box-shadow: 0 6px 18px rgba(2,6,23,0.28);
+}
+
+/* subtle separators between stacked sections */
+.section-gap + .section-gap {
+  border-top: 1px solid rgba(255,255,255,0.02);
+  padding-top: 1.25rem;
+}
+
+/* headings and text: slightly brighter and more legible */
+h1, h2, h3 {
+  color: var(--text);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.12);
+}
+
+/* links and small accents get a faint glow to stand out */
+a, .site-nav .nav-link {
+  transition: color .12s ease, box-shadow .12s ease;
+}
+a:hover, .site-nav .nav-link:hover {
+  box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+/* buttons: make primary outlines pop subtly */
+.btn-outline-primary {
+  background: linear-gradient(180deg, transparent 0%, rgba(255,255,255,0.01) 100%);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+.btn-outline-primary:hover {
+  background: linear-gradient(180deg, rgba(78,168,255,0.03), rgba(78,168,255,0.01));
+}
+
+/* profile image: soft ring to separate it from black */
+.profile-img {
+  box-shadow: 0 10px 28px rgba(2,6,23,0.60), 0 0 18px rgba(78,168,255,0.03);
+  border: 1px solid rgba(255,255,255,0.03);
+}
+
+/* fallback for older browsers: slight luminance increase for panes */
+@supports not (color-mix(in srgb, var(--card) 94%, var(--surface-overlay-2) 6%)) {
+  .content-wrap, .pane.surface { background-color: color-mix(in srgb, var(--card) 96%, #ffffff 2%); }
+}
+
+/* Ensure content inside content-wrap has inner padding so elements don't touch edges */
+.content-wrap {
+  padding-left: 1.25rem;    /* small screens */
+  padding-right: 1.25rem;
+}
+
+/* Larger inner padding on wider screens */
+@media (min-width: 768px) {
+  .content-wrap { padding-left: 2rem; padding-right: 2rem; }
+}
+@media (min-width: 1200px) {
+  .content-wrap { padding-left: 2.5rem; padding-right: 2.5rem; }
+}
+
+/* Give the top-right toggle some breathing room when it's positioned inside the content area */
+.d-flex.justify-content-end.align-items-start.mb-3 {
+  padding-top: 0.5rem;
+  padding-right: 0.25rem;
+}
+
+/* Optional: target the toggle specifically if you prefer explicit spacing */
+#appearanceToggle { margin-right: 0.25rem; }
+
+/* Keep profile image inset from the content edge on medium+ screens */
+.left-col,
+.col-md-4.text-center.text-md-start {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+@media (min-width: 992px) {
+  .left-col,
+  .col-md-4.text-center.text-md-start { padding-left: 1rem; padding-right: 1rem; }
+}
+
+/* If the image still appears flush, add a small left offset only on wide screens */
+@media (min-width: 1200px) {
+  .profile-img { margin-left: 0.25rem; }
+}
+
+/* extra space under profile image */
+.profile-img {
+  margin-bottom: 1rem; /* safe default for small screens */
+}
+
+/* on medium+ screens, align the row content so image is centered vertically
+   and increase bottom spacing for a more balanced look */
+@media (min-width: 768px) {
+  .row.align-items-start { align-items: center; } /* centers columns vertically */
+  .profile-img { margin-bottom: 1.5rem; }
+}
+
+/* larger screens: more breathing room if you want it */
+@media (min-width: 992px) {
+  .profile-img { margin-bottom: 2rem; }
 }
