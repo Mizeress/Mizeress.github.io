@@ -90,7 +90,24 @@ nav.site-nav a:hover { text-decoration: underline; color: var(--accent); }
   box-shadow: 0 8px 30px rgba(2,6,23,0.35);
 }
 
-/* small tweak so the resume link sits to the right on wider screens */
 @media (min-width: 576px) {
   .site-nav .ms-sm-auto { margin-left: auto !important; }
+}
+
+/* enlarge profile picture responsively */
+.profile-img {
+  width: 100%;
+  max-width: 320px; /* default max on small/medium screens */
+  height: auto;
+  border-radius: .375rem;
+}
+
+/* larger on medium+ screens */
+@media (min-width: 768px) {
+  .profile-img { max-width: 420px; }
+}
+
+/* optional: slight negative margin to visually nudge it left on wide screens */
+@media (min-width: 992px) {
+  .profile-img { margin-left: -1rem; }
 }
