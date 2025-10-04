@@ -109,5 +109,5 @@ nav.site-nav a:hover { text-decoration: underline; color: var(--accent); }
 
 /* optional: slight negative margin to visually nudge it left on wide screens */
 @media (min-width: 992px) {
-  .profile-img { margin-left: -1rem; }
+  .profile-img { margin-left: -2rem; }
 }
