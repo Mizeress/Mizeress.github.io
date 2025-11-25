@@ -18,7 +18,7 @@ html, body {
 }
 
 .main-content {
-    width: 80%;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     background-color: var(--light-background);
@@ -84,11 +84,11 @@ header {
         box-shadow: var(--dark-box-shadow);
     }
 
-    nav a:link, nav a:visited {
+    a:link, nav a:visited {
         color: var(--dark-anchor-color);
     }
 
-    nav a:hover, nav a:active {
+    a:hover, nav a:active {
         color: var(--dark-anchor-hover-color);
     }
 }
