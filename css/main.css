@@ -26,6 +26,7 @@ html, body {
 }
 
 nav, footer {
+    display: grid;
     margin-left: 0px;
     margin-right: 0px;
     padding: 10px;
