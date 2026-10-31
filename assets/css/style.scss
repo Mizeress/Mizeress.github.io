@@ -45,6 +45,23 @@ body {
   background-color: var(--bg-dark) !important;
 }
 
+img[src*="PfP_26.jpg"] {
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 2px solid var(--border) !important;
+  float: right !important; /* Pushes the image cleanly to the right side */
+  margin-left: 2rem !important;
+  margin-bottom: 1.5rem !important;
+}
+
+/* Clear the float so future headers don't get messed up */
+h2 {
+  clear: both !important;
+}
+
+
 /* Structural Typography Overrides */
 h1 {
   font-size: 2.25rem !important;
@@ -109,18 +126,6 @@ a {
 a:hover {
   color: var(--accent-hover) !important;
   text-decoration: underline !important;
-}
-
-img[src*="PfP_26.jpg"] {
-  width: 120px !important;
-  height: 120px !important;
-  border-radius: 12px !important; /* Soft modern square corners */
-  object-fit: cover !important;
-  border: 1px solid var(--border) !important;
-  margin-top: 1rem !important;
-  margin-bottom: 2rem !important;
-  display: block !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important; /* Subtle depth drop */
 }
 
 /* Footer Element Overrides */
