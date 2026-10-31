@@ -4,7 +4,7 @@ description: A collection of my computer science and software development projec
 
 # Theme Selection
 theme: jekyll-theme-cayman
-remote_theme: pages-theme/cayman
+remote_theme: pages-themes/cayman
 
 # Formatting
 permalink: /:title/
