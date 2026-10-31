@@ -1,5 +1,5 @@
 # Samuel Mallia's Portfolio
-![My Professional Image](URL)
+![My Professional Image](assets/images/PfP_26.jpg)
 
 Hello, my name is Samuel Mallia. I am a Senior Computer Science Student at Wright State University. I also serve as a Teaching Assistant for the *Operating System Concepts and their Usage* course, where I help students learn Linux, Git, and command line concepts. My work stems from a passion for learning new things and solving challenging problems. 
 
@@ -14,10 +14,10 @@ Hello, my name is Samuel Mallia. I am a Senior Computer Science Student at Wrigh
 
 ## Featured Projects
 ### Exercise Tracker - CEG 4110 Team Project
-TODO FILL IN WITH SUMMARIES
+TODO FILL IN WITH SUMMARIES AND LINK TO REPO
 
 ### Off the Charts - CS 4900 Emberlights Team Project
-TODO FILL IN WITH SUMMARIES
+TODO FILL IN WITH SUMMARIES AND LINK TO REPO
 
 ## Contact Me
 - **LinkedIn:** [Your Profile Link]
