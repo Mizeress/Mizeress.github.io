@@ -2,128 +2,108 @@
 ---
 @import "{{ site.theme }}";
 
-
 :root {
-  --bg-dark: #0f141c;
-  --bg-card: #18202c;
-  --text-primary: #e2e8f0;
-  --text-secondary: #94a3b8;
-  --accent: #38bdf8;
-  --accent-hover: #7dd3fc;
-  --border: #243242;
-  --code-bg: #1e293b;
+  --bg-dark: #0d1117;
+  --bg-card: #161b22;
+  --text-primary: #c9d1d9;
+  --text-secondary: #8b949e;
+  --accent: #58a6ff;
+  --accent-hover: #79c0ff;
+  --border: #30363d;
+  --code-bg: #21262d;
 }
 
-/* Global Reset & Body Background */
+/* Base Body Alignment Override */
 body {
   background-color: var(--bg-dark) !important;
   color: var(--text-primary) !important;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important;
+  line-height: 1.6 !important;
 }
 
-/* Strip Cayman's large bright gradient header and make it minimal */
+/* Flatten out the disjointed header structure entirely */
 .page-header {
   background-color: var(--bg-dark) !important;
   background-image: none !important;
-  padding: 3rem 1.5rem 1.5rem 1.5rem !important;
-  border-bottom: 1px solid var(--border);
+  padding: 4rem 1.5rem 0 1.5rem !important;
+  border-bottom: none !important;
   text-align: left !important;
-  max-width: 64rem;
-  margin: 0 auto;
+  max-width: 750px !important;
+  margin: 0 auto !important;
 }
 
-.project-name {
-  font-size: 2.5rem !important;
-  font-weight: 800 !important;
-  color: #ffffff !important;
-  letter-spacing: -0.025em;
-}
-
-.project-tagline {
-  font-size: 1.15rem !important;
-  color: var(--text-secondary) !important;
-  opacity: 1 !important;
-  margin-top: 0.5rem;
-}
-
-/* Hide theme buttons from the header since markdown provides links */
-.page-header .btn {
+/* Hide the default metadata repository text fields */
+.project-name, .project-tagline, .page-header .btn {
   display: none !important;
 }
 
-/* Main Content Container Restyling */
+/* Force content to span fluidly down the page center */
 .main-content {
-  max-width: 64rem !important;
+  max-width: 750px !important;
+  margin: 0 auto !important;
   padding: 2rem 1.5rem !important;
-  color: var(--text-primary) !important;
   background-color: var(--bg-dark) !important;
 }
 
-/* Typography Overrides */
-h1, h2, h3, h4, h5, h6 {
-  color: #ffffff !important;
-  font-weight: 700 !important;
-  letter-spacing: -0.02em;
-}
-
+/* Structural Typography Overrides */
 h1 {
-  display: none; /* Hide duplicate title if README has an identical H1 to project-name */
+  font-size: 2.25rem !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding-bottom: 0.5rem !important;
+  margin-top: 0 !important;
+  margin-bottom: 2rem !important;
 }
 
 h2 {
-  font-size: 1.75rem !important;
-  border-bottom: 2px solid var(--border) !important;
-  padding-bottom: 0.5rem !important;
-  margin-top: 3rem !important;
+  font-size: 1.5rem !important;
+  font-weight: 600 !important;
   color: var(--accent) !important;
+  border-bottom: 1px solid var(--border) !important;
+  padding-bottom: 0.3rem !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 1.25rem !important;
 }
 
 h3 {
-  font-size: 1.25rem !important;
-  margin-top: 2rem !important;
+  font-size: 1.15rem !important;
+  font-weight: 600 !important;
   color: #ffffff !important;
+  margin-top: 1.75rem !important;
+  margin-bottom: 0.75rem !important;
 }
 
-p, li {
-  color: var(--text-secondary) !important;
-  font-size: 1.05rem !important;
-  line-height: 1.7 !important;
+p, ul, ol {
+  margin-bottom: 1.25rem !important;
 }
 
-strong {
+p {
   color: var(--text-primary) !important;
-  font-weight: 600;
+  font-size: 1.05rem !important;
 }
 
-em {
-  color: var(--accent) !important;
-  font-style: italic;
-}
-
-/* Custom list layout styling for Skills section */
+/* Clean, modern list format for skills */
 ul {
   list-style-type: none !important;
   padding-left: 0 !important;
 }
 
 li {
-  position: relative;
-  padding-left: 1.25rem;
-  margin-bottom: 0.5rem;
+  color: var(--text-secondary) !important;
+  font-size: 1rem !important;
+  margin-bottom: 0.6rem !important;
+  line-height: 1.5 !important;
 }
 
-li::before {
-  content: "→";
-  position: absolute;
-  left: 0;
-  color: var(--accent);
+li strong {
+  color: var(--text-primary) !important;
 }
 
-/* Hyperlinks & Document Actions */
+/* Hyperlinks */
 a {
   color: var(--accent) !important;
   text-decoration: none !important;
-  transition: color 0.2s ease;
 }
 
 a:hover {
@@ -131,31 +111,21 @@ a:hover {
   text-decoration: underline !important;
 }
 
-/* Format inline code fragments and markdown blocks */
-code {
-  background-color: var(--code-bg) !important;
-  color: var(--accent-hover) !important;
-  border: 1px solid var(--border) !important;
-  border-radius: 6px !important;
-  padding: 0.2rem 0.4rem !important;
-  font-size: 0.9em !important;
-}
-
-/* Portfolio Circular Image Adjustments */
+/* Image Formatting Blocks */
 img[src*="PfP_26.jpg"] {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--border);
-  margin-bottom: 1rem;
+  width: 110px !important;
+  height: 110px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 2px solid var(--border) !important;
+  margin-bottom: 1.5rem !important;
+  display: block !important;
 }
 
-/* Responsive Structural Footers */
+/* Footer Element Overrides */
 .site-footer {
   border-top: 1px solid var(--border) !important;
   padding-top: 1.5rem !important;
+  margin-top: 4rem !important;
   color: var(--text-secondary) !important;
-  max-width: 64rem;
-  margin: 2rem auto 0 auto;
 }
